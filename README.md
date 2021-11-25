@@ -105,11 +105,12 @@ The simulation will take approx. 70 minutes.
 During the simulation and at the end, several log files will be created (in the same directory), including the Windows Event logs and Linux syslogs downloaded from the VMs.
 
 To match Sigma rules against the created Windows Event logs, we used our open-source tool [Logprep](https://github.com/fkie-cad/Logprep), which is included here as a Python EXecutable (PEX) file called `check_sigma.pex`.
-Please note that this file requires Linux and Python 3.8 (default in Ubuntu 20.04) to run.
+Please note that Logprep is licensed under the LGPL.
+This file requires Linux and Python 3.8 (default in Ubuntu 20.04) to run.
 Let us know if you are using a different OS or Python version, we can recompile the file for you.
 
-We also included the Sigma rules used for the Evaluation in the `rules` directory.
-These rules were downloaded from the [official Sigma repository](https://github.com/SigmaHQ/sigma).
+We also included the detection rules used for the evaluation in the `rules` directory.
+These rules were downloaded from the [official Sigma repository](https://github.com/SigmaHQ/sigma) and then converted to a format that Logprep can process.
 Please note that the [Detection Rule License](https://github.com/SigmaHQ/sigma/blob/master/LICENSE.Detection.Rules.md) applies.
 Use the following command to create Sigma alerts from the Windows Event log file (can take several minutes):
 
